@@ -15,7 +15,7 @@ public class PovRoom : MonoBehaviour
     void Start()
     {
         canvas = FindObjectOfType<Canvas>();
-        Transform bgTransform = canvas.transform.Find("background");
+        Transform bgTransform = canvas.transform.Find("room/roombg");
         imageComponent = bgTransform.GetComponent<Image>();
 
         // Mendapatkan semua sprite dalam folder "Room"
