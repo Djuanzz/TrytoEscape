@@ -1,0 +1,26 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 728617c48a7bcc14a925d04cbdc7d24a, type: 3}
+  m_Name: musicc 1
+  m_EditorClassIdentifier: 
+  objectName: pemutar musik
+  objectSprite: {fileID: 21300000, guid: 031e442e8110ace46abdcb80fc81aa3a, type: 3}
+  objectId: 1
+  activeRoom: 0
+  roomPov: 0
+  isMachine: 0
+  isDetail: 1
+  detailSprite: {fileID: 21300000, guid: 47e8e55cb7b4bea48806cbccff517846, type: 3}
+  objectX: 100
+  objectY: 100
+  objectWidth: 300
+  objectHeight: 300

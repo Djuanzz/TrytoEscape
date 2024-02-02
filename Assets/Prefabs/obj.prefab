@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &255111001105796980
+--- !u!1 &7648184242172603675
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,26 +8,24 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 255111001105796875}
-  - component: {fileID: 255111001105796873}
-  - component: {fileID: 255111001105796874}
-  - component: {fileID: 593055696984372079}
-  - component: {fileID: -1591462839448953921}
-  - component: {fileID: 7625522506801866512}
+  - component: {fileID: 4271797057863035359}
+  - component: {fileID: 9138916401722496568}
+  - component: {fileID: 7232696678716169418}
+  - component: {fileID: 4078794221257243413}
   m_Layer: 5
-  m_Name: musik
+  m_Name: obj
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &255111001105796875
+--- !u!224 &4271797057863035359
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 255111001105796980}
+  m_GameObject: {fileID: 7648184242172603675}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -38,24 +36,24 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -606, y: 81.8312}
-  m_SizeDelta: {x: 412.85, y: 373.4925}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 200, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &255111001105796873
+--- !u!222 &9138916401722496568
 CanvasRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 255111001105796980}
+  m_GameObject: {fileID: 7648184242172603675}
   m_CullTransparentMesh: 1
---- !u!114 &255111001105796874
+--- !u!114 &7232696678716169418
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 255111001105796980}
+  m_GameObject: {fileID: 7648184242172603675}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -69,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 031e442e8110ace46abdcb80fc81aa3a, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -79,43 +77,16 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &593055696984372079
+--- !u!114 &4078794221257243413
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 255111001105796980}
+  m_GameObject: {fileID: 7648184242172603675}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9dc77205e12919940baffdfd0258b383, type: 3}
+  m_Script: {fileID: 11500000, guid: 3ff6897189216aa44828d282a9552365, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectSO: {fileID: 11400000, guid: 105d5f0b3ac3f8a40b3d28a62266f364, type: 2}
---- !u!114 &-1591462839448953921
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 255111001105796980}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74647a0296efaf5409259f7addee1193, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectSO: {fileID: 11400000, guid: 105d5f0b3ac3f8a40b3d28a62266f364, type: 2}
---- !u!64 &7625522506801866512
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 255111001105796980}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 4
-  m_Convex: 0
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 0}
+  objectSO: {fileID: 11400000, guid: 8cc23977e48cfc943a1e525db7296af3, type: 2}

@@ -12,6 +12,9 @@ public class TryInventoryPage : MonoBehaviour
 
     List<TryInventoryItem> listOfUIItems = new List<TryInventoryItem>();
 
+    public Sprite image;
+    public Sprite image1;
+
     public void InitializeInventoryUI(int inventorySize){
         for (int i = 0; i < inventorySize; i++)
         {
@@ -52,7 +55,24 @@ public class TryInventoryPage : MonoBehaviour
 
     private void HandleItemSelection(TryInventoryItem item)
     {
-        // throw new NotImplementedException();
+        // throw new NotImplementedException(); 
+        foreach (var uiItem in listOfUIItems)
+        {
+            if(uiItem != item) uiItem.Deselect();
+        }
+        item.Select();
         Debug.Log(item.name + "Item Clicked");
+        // listOfUIItems[0].Select();
+        // listOfUIItems[1].Select();
+    }
+
+    public void Show(){
+        gameObject.SetActive(true);
+        listOfUIItems[0].SetData(image);
+        listOfUIItems[1].SetData(image1);
+    }
+
+    public void Hide(){
+        gameObject.SetActive(false);
     }
 }
