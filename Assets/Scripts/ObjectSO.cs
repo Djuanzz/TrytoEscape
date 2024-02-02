@@ -8,23 +8,19 @@ public class ObjectSO : ScriptableObject
     [Header("UI")]
     public string objectName;
     public Sprite objectSprite;
-    public int objectId;
-    public string roomName;
+    public string  objectId;
 
-    // [Header("Object Placement")]
-    // public float objectX;
-    // public float objectY;
-    // public float objectWidth;
-    // public float objectHeight;
-    // // Start is called before the first frame update
-    // void Start()
-    // {
-        
-    // }
+    [Header("Object Details")]
+    public ActiveRoom activeRoom;
+    public RoomPov roomPov;
+    public bool isMachine;
+    public bool isDetail;
+    public Sprite detailSprite;
 
-    // // Update is called once per frame
-    // void Update()
-    // {
-        
-    // }
+    [Header("Object Placement")]
+    public float objectX;
+    public float objectY;
+    public float objectWidth;
+    public float objectHeight;
+
 }

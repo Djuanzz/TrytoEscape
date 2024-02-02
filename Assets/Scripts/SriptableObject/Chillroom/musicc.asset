@@ -10,9 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 728617c48a7bcc14a925d04cbdc7d24a, type: 3}
-  m_Name: pigura
+  m_Name: musicc
   m_EditorClassIdentifier: 
-  objectName: pigura
-  objectSprite: {fileID: 21300000, guid: e861147030b12cd47bd22a42554a2470, type: 3}
-  objectId: 2
-  roomName: chillroom
+  objectName: pemutar musik
+  objectSprite: {fileID: 21300000, guid: 031e442e8110ace46abdcb80fc81aa3a, type: 3}
+  objectId: 1
+  activeRoom: 0
+  roomPov: 0
+  isMachine: 0
+  isDetail: 1
+  detailSprite: {fileID: 21300000, guid: 47e8e55cb7b4bea48806cbccff517846, type: 3}
+  objectX: 300
+  objectY: 300
+  objectWidth: 100
+  objectHeight: 100
