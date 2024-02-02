@@ -16,7 +16,7 @@ public class CobaObject : MonoBehaviour
 
     private void Start(){
         objectImage.sprite = objectSO.objectSprite;
-        objectImage.rectTransform.sizeDelta = new Vector2(objectSO.objectWidth, objectSO.objectHeight);
+        // objectImage.rectTransform.sizeDelta = new Vector2(objectSO.objectWidth, objectSO.objectHeight);
         objectImage.rectTransform.anchoredPosition = new Vector2(objectSO.objectX, objectSO.objectY);
     }
 }

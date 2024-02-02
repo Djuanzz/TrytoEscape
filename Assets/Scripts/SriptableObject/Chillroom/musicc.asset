@@ -16,11 +16,9 @@ MonoBehaviour:
   objectSprite: {fileID: 21300000, guid: 031e442e8110ace46abdcb80fc81aa3a, type: 3}
   objectId: 1
   activeRoom: 0
-  roomPov: 0
+  roomPov: 2
   isMachine: 0
   isDetail: 1
   detailSprite: {fileID: 21300000, guid: 47e8e55cb7b4bea48806cbccff517846, type: 3}
   objectX: 300
   objectY: 300
-  objectWidth: 100
-  objectHeight: 100

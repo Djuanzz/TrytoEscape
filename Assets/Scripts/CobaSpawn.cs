@@ -10,22 +10,35 @@ public class CobaSpawn : MonoBehaviour
     [SerializeField]
     private RectTransform contentPanel;
 
-    public RoomPov roomPov;
-    public ActiveRoom activeRoom;
+    [SerializeField]
+    private CobaPovRoom cobaPovRoom;
+
+    private List<GameObject> instantiatedObjects = new List<GameObject>();
 
     void Start(){
+        SpawnObject();
+    }
+    
+    public void SpawnObject()
+    {
         for (int i = 0; i < itemPrefab.Count; i++)
         {
-            if (itemPrefab[i].objectSO.roomPov == roomPov && itemPrefab[i].objectSO.activeRoom == activeRoom)
+            if (itemPrefab[i].objectSO.roomPov == cobaPovRoom.roomPov && itemPrefab[i].objectSO.activeRoom == cobaPovRoom.activeRoom)
             {
-                CobaObject uiItem = Instantiate(itemPrefab[i], new Vector3(itemPrefab[i].objectSO.objectX,itemPrefab[i].objectSO.objectY,0), Quaternion.identity);
+                CobaObject uiItem = Instantiate(itemPrefab[i], new Vector3(itemPrefab[i].objectSO.objectX, itemPrefab[i].objectSO.objectY, 0), Quaternion.identity);
                 uiItem.transform.SetParent(contentPanel);
+                instantiatedObjects.Add(uiItem.gameObject); // Menambahkan game object ke dalam list instantiatedObjects
             }
-            // CobaObject uiItem = Instantiate(itemPrefab[i], new Vector3(itemPrefab[i].objectSO.objectX,itemPrefab[i].objectSO.objectY,0), Quaternion.identity);
-            // uiItem.transform.SetParent(contentPanel);
         }
-        // TryInventoryItem uiItem = Instantiate(itemPrefab, new Vector3(500,500,0), Quaternion.identity);
-        // uiItem.transform.SetParent(contentPanel);
     }
 
+    // Fungsi untuk menghancurkan semua game object yang telah dibuat
+    public void DestroyAllObjects()
+    {
+        foreach (GameObject obj in instantiatedObjects)
+        {
+            Destroy(obj);
+        }
+        instantiatedObjects.Clear(); // Mengosongkan list instantiatedObjects setelah game object dihancurkan
+    }
 }

@@ -13,14 +13,12 @@ MonoBehaviour:
   m_Name: musicc 2
   m_EditorClassIdentifier: 
   objectName: pemutar musik
-  objectSprite: {fileID: 21300000, guid: 031e442e8110ace46abdcb80fc81aa3a, type: 3}
+  objectSprite: {fileID: 21300000, guid: e861147030b12cd47bd22a42554a2470, type: 3}
   objectId: 1
   activeRoom: 0
-  roomPov: 0
+  roomPov: 1
   isMachine: 0
   isDetail: 1
   detailSprite: {fileID: 21300000, guid: 47e8e55cb7b4bea48806cbccff517846, type: 3}
   objectX: 500
   objectY: 500
-  objectWidth: 200
-  objectHeight: 200

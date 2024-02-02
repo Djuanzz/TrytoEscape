@@ -20,7 +20,4 @@ public class ObjectSO : ScriptableObject
     [Header("Object Placement")]
     public float objectX;
     public float objectY;
-    public float objectWidth;
-    public float objectHeight;
-
 }

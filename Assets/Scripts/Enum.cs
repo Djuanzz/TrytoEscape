@@ -1,13 +1,13 @@
 public enum ActiveRoom
 {
-    chillroom,
-    cave,
+    Chillroom,
+    Cave,
 }
 
 public enum RoomPov
 {
-    front,
-    back,
-    left,
-    right,
+    Afront,
+    Bright,
+    Cback,
+    Dleft,
 }
