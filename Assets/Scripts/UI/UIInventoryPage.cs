@@ -24,6 +24,8 @@ public class UIInventoryPage : MonoBehaviour
     public int quantity;
     public string title, description;
 
+    private int curDraggedItemIndex = -1;
+
     private void Awake(){
         Hide();
         mouseFollower.Toogle(false);
@@ -53,6 +55,17 @@ public class UIInventoryPage : MonoBehaviour
     private void HandleSwap(UIInventoryItem item)
     {
         // throw new NotImplementedException();
+        int index = listOfUIItems.IndexOf(item);
+        if (index == -1) {
+            mouseFollower.Toogle(false);
+            curDraggedItemIndex = -1;
+            return;
+        }
+        
+        listOfUIItems[curDraggedItemIndex].SetData(index == 0 ? image1 : image2, quantity);
+        listOfUIItems[index].SetData(curDraggedItemIndex == 0 ? image1 : image2, quantity);
+        mouseFollower.Toogle(false);
+        curDraggedItemIndex = -1;
     }
     
     private void HandleEndDrag(UIInventoryItem item)
@@ -65,8 +78,12 @@ public class UIInventoryPage : MonoBehaviour
     private void HandleBeginDrag(UIInventoryItem item)
     {
         // throw new NotImplementedException();
+        int index = listOfUIItems.IndexOf(item);
+        if (index == -1) return;
+        curDraggedItemIndex = index;
+
         mouseFollower.Toogle(true);
-        mouseFollower.SetData(image1, quantity);
+        mouseFollower.SetData(index == 0 ? image1 : image2, quantity);
     }
 
     private void HandleItemSelection(UIInventoryItem item)
@@ -83,6 +100,7 @@ public class UIInventoryPage : MonoBehaviour
         itemDesc.ResetDescription();
 
         listOfUIItems[0].SetData(image1, quantity);
+        listOfUIItems[1].SetData(image2, quantity);
     }
 
     public void Hide(){

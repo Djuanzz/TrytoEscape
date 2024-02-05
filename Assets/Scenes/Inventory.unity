@@ -357,7 +357,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryUI: {fileID: 45541413}
-  inventorySize: 10
+  inventorySize: 30
 --- !u!4 &766811676
 Transform:
   m_ObjectHideFlags: 0
@@ -480,7 +480,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1391668859
 RectTransform:
   m_ObjectHideFlags: 0
@@ -539,19 +539,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3477535837650086592, guid: ee4b9de2540757a44aa12cd0efd6f22c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3477535837650086592, guid: ee4b9de2540757a44aa12cd0efd6f22c, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3477535837650086592, guid: ee4b9de2540757a44aa12cd0efd6f22c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 52.332
       objectReference: {fileID: 0}
     - target: {fileID: 3477535837650086592, guid: ee4b9de2540757a44aa12cd0efd6f22c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -40.00385
       objectReference: {fileID: 0}
     - target: {fileID: 8143903406837684701, guid: ee4b9de2540757a44aa12cd0efd6f22c, type: 3}
       propertyPath: m_RaycastTarget
@@ -1052,6 +1052,14 @@ PrefabInstance:
       propertyPath: title
       value: pemutar musik
       objectReference: {fileID: 0}
+    - target: {fileID: 4774260102260710325, guid: 83a6b1379cd855e4e8faf4822ee0f4ca, type: 3}
+      propertyPath: image1
+      value: 
+      objectReference: {fileID: 21300000, guid: 031e442e8110ace46abdcb80fc81aa3a, type: 3}
+    - target: {fileID: 4774260102260710325, guid: 83a6b1379cd855e4e8faf4822ee0f4ca, type: 3}
+      propertyPath: image2
+      value: 
+      objectReference: {fileID: 21300000, guid: e861147030b12cd47bd22a42554a2470, type: 3}
     - target: {fileID: 4774260102260710325, guid: 83a6b1379cd855e4e8faf4822ee0f4ca, type: 3}
       propertyPath: quantity
       value: 7
