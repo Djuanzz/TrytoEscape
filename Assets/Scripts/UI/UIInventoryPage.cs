@@ -65,15 +65,15 @@ public class UIInventoryPage : MonoBehaviour
             listOfUIItems[itemIndex].SetData(itemSprite, quantity);
     }
 
-    private void HandleShowItemAction(UIInventoryItem item)
+    private void HandleShowItemAction(UIInventoryItem inventoryItem)
     {
         // throw new NotImplementedException();
     }
 
-    private void HandleSwap(UIInventoryItem item)
+    private void HandleSwap(UIInventoryItem inventoryItem)
     {
         // throw new NotImplementedException();
-        int index = listOfUIItems.IndexOf(item);
+        int index = listOfUIItems.IndexOf(inventoryItem);
         if (index == -1) {
             return;
         }
@@ -84,36 +84,37 @@ public class UIInventoryPage : MonoBehaviour
         // curDraggedItemIndex = -1;
 
         OnSwapItems?.Invoke(curDraggedItemIndex, index);
+        HandleItemSelection(inventoryItem);
     }
     
-    private void HandleEndDrag(UIInventoryItem item)
+    private void HandleEndDrag(UIInventoryItem inventoryItem)
     {
         // throw new NotImplementedException();
         ResetDraggedItem();
     }
 
-    private void HandleBeginDrag(UIInventoryItem item)
+    private void HandleBeginDrag(UIInventoryItem inventoryItem)
     {
         // throw new NotImplementedException();
-        int index = listOfUIItems.IndexOf(item);
+        int index = listOfUIItems.IndexOf(inventoryItem);
         if (index == -1) return;
         curDraggedItemIndex = index;
-        HandleItemSelection(item);
+        HandleItemSelection(inventoryItem);
         OnStartDragging?.Invoke(index);
     }
 
-    private void HandleItemSelection(UIInventoryItem item)
+    private void HandleItemSelection(UIInventoryItem inventoryItem)
     {
         // throw new NotImplementedException();
-        Debug.Log(item.name + " is selected");
-        int index = listOfUIItems.IndexOf(item);
+        Debug.Log(inventoryItem.name + " is selected");
+        int index = listOfUIItems.IndexOf(inventoryItem);
         if (index == -1) return;
         OnDescriptionRequested?.Invoke(index);
     }
 
     private void DeselectAllItems(){
-        foreach (UIInventoryItem item in listOfUIItems){
-            item.Deselect();
+        foreach (UIInventoryItem inventoryItem in listOfUIItems){
+            inventoryItem.Deselect();
         }
     }
 
@@ -136,5 +137,14 @@ public class UIInventoryPage : MonoBehaviour
         itemDesc.SetDescription(itemImage, name, description);
         DeselectAllItems();
         listOfUIItems[itemIndex].Select();
+    }
+
+    internal void ResetAllItems()
+    {
+        foreach (UIInventoryItem inventoryItem in listOfUIItems)
+        {
+            inventoryItem.ResetData();
+            inventoryItem.Deselect();
+        }
     }
 }

@@ -12,6 +12,8 @@ public class InventorySO : ScriptableObject
     [field: SerializeField]
     public int Size { get; private set; } = 10;
 
+    public event Action<Dictionary<int, InventoryItem>> OnInventoryChanged;
+
     public void Initialze(){
         inventoryItems = new List<InventoryItem>();
         for (int i = 0; i < Size; i++)
@@ -28,6 +30,7 @@ public class InventorySO : ScriptableObject
                     item = item,
                     quantity = quantity
                 };
+                return;
             }
         }
     }
@@ -44,6 +47,23 @@ public class InventorySO : ScriptableObject
 
     public InventoryItem GetItemAt(int itemIndex){
         return inventoryItems[itemIndex];
+    }
+
+    public void AddItem(InventoryItem item){
+        AddItem(item.item, item.quantity);
+    }
+
+    public void SwapItems(int itemIndex1, int itemIndex2)
+    {
+        InventoryItem temp = inventoryItems[itemIndex1];
+        inventoryItems[itemIndex1] = inventoryItems[itemIndex2];
+        inventoryItems[itemIndex2] = temp;
+        InformAboutChange();
+    }
+
+    private void InformAboutChange()
+    {
+        OnInventoryChanged?.Invoke(GetCurInventoryState());
     }
 }
 

@@ -11,6 +11,8 @@ public class InventoryController : MonoBehaviour
     [SerializeField]
     private InventorySO inventoryData;
 
+    public List<InventoryItem> initialItems = new List<InventoryItem>();
+
     private void PrepareUi(){
         inventoryUI.InitializeInventoryUI(inventoryData.Size);
         this.inventoryUI.OnDescriptionRequested += HandleDescriptionRequest;
@@ -19,14 +21,38 @@ public class InventoryController : MonoBehaviour
         this.inventoryUI.OnSwapItems += HandleSwapItems;
     }
 
+    private void PrepareInventoryData(){
+        inventoryData.Initialze();
+        inventoryData.OnInventoryChanged += UpdateInventoryUI;
+        foreach (InventoryItem item in initialItems){
+            if (item.isEmpty) continue;
+            inventoryData.AddItem(item);
+        }
+    }
+
+    private void UpdateInventoryUI(Dictionary<int, InventoryItem> inventoryState)
+    {
+        inventoryUI.ResetAllItems();
+        foreach (var item in inventoryState)
+        {
+            inventoryUI.UpdateData(
+                item.Key, 
+                item.Value.item.ItemImage, 
+                item.Value.quantity
+            );
+        }
+    }
+
     private void HandleSwapItems(int itemIndex1, int itemIndex2)
     {
-        // throw new NotImplementedException();
+        inventoryData.SwapItems(itemIndex1, itemIndex2);
     }
 
     private void HandleStartDragging(int itemIndex)
     {
-        // throw new NotImplementedException();
+        InventoryItem inventoryItem = inventoryData.GetItemAt(itemIndex);
+        if (inventoryItem.isEmpty) return;
+        inventoryUI.CreateDraggedItem(inventoryItem.item.ItemImage, inventoryItem.quantity);
     }
 
     private void HandleItemActionRequest(int itemIndex)
@@ -48,8 +74,9 @@ public class InventoryController : MonoBehaviour
 
     private void Start(){
         PrepareUi();
-        // inventoryData.Initialze();
+        PrepareInventoryData();
     }
+
     public void Update(){
         if(Input.GetKeyDown(KeyCode.I)){
             if(inventoryUI.isActiveAndEnabled){
