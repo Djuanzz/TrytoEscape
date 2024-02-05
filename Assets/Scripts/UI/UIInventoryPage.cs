@@ -20,11 +20,14 @@ public class UIInventoryPage : MonoBehaviour
     // --- UNTUK MENDAPATKAN INDEX DAN REFFERENCE DARI ITEM
     List<UIInventoryItem> listOfUIItems = new List<UIInventoryItem>();
 
-    public Sprite image1, image2;
-    public int quantity;
-    public string title, description;
+    // public Sprite image1, image2;
+    // public int quantity;
+    // public string title, description;
 
     private int curDraggedItemIndex = -1;
+
+    public event Action<int> OnDescriptionRequested, OnItemActionRequested, OnStartDragging;
+    public event Action<int, int> OnSwapItems;
 
     private void Awake(){
         Hide();
@@ -47,6 +50,21 @@ public class UIInventoryPage : MonoBehaviour
         }
     }
 
+    private void ResetDraggedItem(){
+        mouseFollower.Toogle(false);
+        curDraggedItemIndex = -1;
+    }
+
+    public void CreateDraggedItem(Sprite itemSprite, int quantity){
+        mouseFollower.Toogle(true);
+
+    }
+
+    public void UpdateData(int itemIndex, Sprite itemSprite, int quantity){
+        if (listOfUIItems.Count > itemIndex)
+            listOfUIItems[itemIndex].SetData(itemSprite, quantity);
+    }
+
     private void HandleShowItemAction(UIInventoryItem item)
     {
         // throw new NotImplementedException();
@@ -57,22 +75,21 @@ public class UIInventoryPage : MonoBehaviour
         // throw new NotImplementedException();
         int index = listOfUIItems.IndexOf(item);
         if (index == -1) {
-            mouseFollower.Toogle(false);
-            curDraggedItemIndex = -1;
             return;
         }
         
-        listOfUIItems[curDraggedItemIndex].SetData(index == 0 ? image1 : image2, quantity);
-        listOfUIItems[index].SetData(curDraggedItemIndex == 0 ? image1 : image2, quantity);
-        mouseFollower.Toogle(false);
-        curDraggedItemIndex = -1;
+        // listOfUIItems[curDraggedItemIndex].SetData(index == 0 ? image1 : image2, quantity);
+        // listOfUIItems[index].SetData(curDraggedItemIndex == 0 ? image1 : image2, quantity);
+        // mouseFollower.Toogle(false);
+        // curDraggedItemIndex = -1;
+
+        OnSwapItems?.Invoke(curDraggedItemIndex, index);
     }
     
     private void HandleEndDrag(UIInventoryItem item)
     {
         // throw new NotImplementedException();
-        mouseFollower.Toogle(false);
-        
+        ResetDraggedItem();
     }
 
     private void HandleBeginDrag(UIInventoryItem item)
@@ -81,29 +98,37 @@ public class UIInventoryPage : MonoBehaviour
         int index = listOfUIItems.IndexOf(item);
         if (index == -1) return;
         curDraggedItemIndex = index;
-
-        mouseFollower.Toogle(true);
-        mouseFollower.SetData(index == 0 ? image1 : image2, quantity);
+        HandleItemSelection(item);
+        OnStartDragging?.Invoke(index);
     }
 
     private void HandleItemSelection(UIInventoryItem item)
     {
         // throw new NotImplementedException();
         Debug.Log(item.name + " is selected");
-        itemDesc.SetDescription(image1, title, description);
-        listOfUIItems[0].Select();
-
+        int index = listOfUIItems.IndexOf(item);
+        if (index == -1) return;
+        OnDescriptionRequested?.Invoke(index);
     }
 
+    private void DeselectAllItems(){
+        foreach (UIInventoryItem item in listOfUIItems){
+            item.Deselect();
+        }
+    }
+
+    private void ResetSelection(){
+        itemDesc.ResetDescription();
+        DeselectAllItems();
+
+    }
     public void Show(){
         gameObject.SetActive(true);
-        itemDesc.ResetDescription();
-
-        listOfUIItems[0].SetData(image1, quantity);
-        listOfUIItems[1].SetData(image2, quantity);
+        ResetSelection();
     }
 
     public void Hide(){
         gameObject.SetActive(false);
+        ResetDraggedItem();
     }
 }
