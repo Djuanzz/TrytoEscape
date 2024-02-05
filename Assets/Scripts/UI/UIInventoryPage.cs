@@ -117,11 +117,11 @@ public class UIInventoryPage : MonoBehaviour
         }
     }
 
-    private void ResetSelection(){
+    public void ResetSelection(){
         itemDesc.ResetDescription();
         DeselectAllItems();
-
     }
+    
     public void Show(){
         gameObject.SetActive(true);
         ResetSelection();
@@ -130,5 +130,11 @@ public class UIInventoryPage : MonoBehaviour
     public void Hide(){
         gameObject.SetActive(false);
         ResetDraggedItem();
+    }
+
+    internal void UpdateDescription(int itemIndex, Sprite itemImage, string name, string description, int quantity){
+        itemDesc.SetDescription(itemImage, name, description);
+        DeselectAllItems();
+        listOfUIItems[itemIndex].Select();
     }
 }
