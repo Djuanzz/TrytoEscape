@@ -4,6 +4,12 @@ public enum ActiveRoom
     Cave,
 }
 
+public enum ObjectTypes
+{
+    Pickable,
+    Machine,
+}
+
 public enum RoomPov
 {
     Afront,

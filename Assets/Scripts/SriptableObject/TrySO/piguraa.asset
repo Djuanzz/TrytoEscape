@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7485254258876f0438c6658d667e35a8, type: 3}
+  m_Name: piguraa
+  m_EditorClassIdentifier: 
+  ObjectID: 2
+  ObjectName: pigura
+  ObjectImage: {fileID: 21300000, guid: e861147030b12cd47bd22a42554a2470, type: 3}
+  ObjectType: 0
+  CombineWithObjectID: 3
+  GeneratesObejctID: 5
+  ActiveRoom: 0
+  RoomPov: 0
+  ObjectPosition: {x: 200, y: 200, z: 0}
+  ObjectWidth: 300
+  ObjectHeight: 300
