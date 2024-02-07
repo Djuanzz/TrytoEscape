@@ -67,22 +67,4 @@ public class TryObjectItems : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         transform.position = startPosition;
         image.raycastTarget = true;
     }
-
-    public void CombineObjects(GameObject item1, GameObject item2)
-    {
-        Debug.Log("INGPOKAANNNN");
-        // if (item1.GetComponent<TryObjectItems>().item.ObjectID == item2.GetComponent<TryObjectItems>().item.CombineWithObjectID && item2.GetComponent<TryObjectItems>().item.ObjectID == item1.GetComponent<TryObjectItems>().item.CombineWithObjectID)
-        // {
-        //     Debug.Log("Combined");
-        //     Destroy(item1);
-        //     Destroy(item2);
-        //     // ----- MASIH ERROR DISINI NULL REFERENCE, LANJUT BESOK. KEMUNGKINAN FUCTION INI BAKAL DIPINDAH KE FILE LAIN YANG KHSUUS MENANGANI COMBINE OBJECT
-        //     // objectController.GetObjectByID(item2.GetComponent<TryObjectItems>().item.GeneratesObejctID);
-        //     Debug.Log("Object generated: " + item2.GetComponent<TryObjectItems>().item.GeneratesObejctID);
-        // }
-        // else
-        // {
-        //     Debug.Log("Not Combined");
-        // }
-    }
 }

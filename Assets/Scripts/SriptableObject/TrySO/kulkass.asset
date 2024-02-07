@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7485254258876f0438c6658d667e35a8, type: 3}
-  m_Name: musikk
+  m_Name: kulkass
   m_EditorClassIdentifier: 
-  ObjectID: 3
-  ObjectName: musik
-  ObjectImage: {fileID: 21300000, guid: 031e442e8110ace46abdcb80fc81aa3a, type: 3}
+  ObjectID: 6
+  ObjectName: kulkas
+  ObjectImage: {fileID: 21300000, guid: 73ea90e161fcd5048bc45e542589a652, type: 3}
   ObjectType: 0
   IsInitialObject: 1
-  CombineWithObjectID: 2
-  GeneratesObejctID: 5
+  CombineWithObjectID: 1
+  GeneratesObejctID: 4
   ActiveRoom: 0
-  RoomPov: 0
-  ObjectPosition: {x: -200, y: -200, z: 0}
-  ObjectWidth: 300
-  ObjectHeight: 300
+  RoomPov: 1
+  ObjectPosition: {x: 370, y: 45, z: 0}
+  ObjectWidth: 250
+  ObjectHeight: 400

@@ -21,7 +21,7 @@ public class TryRoomPage : MonoBehaviour
 
     private void LoadRoomSprites(){
         roomSprites = Resources.LoadAll<Sprite>(roomController.activeRoom.ToString());
-        Debug.Log(roomSprites.Length);
+        // Debug.Log(roomSprites.Length);
         if (roomSprites.Length > 0){
             imageComponent.sprite = roomSprites[0];
         } else {

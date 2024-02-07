@@ -15,6 +15,7 @@ public class TryObjectPage : MonoBehaviour
         uiItem.InitialiazeItem(item);
     }
 
+    // ----- INI MENGDESTROY SMUA GAMEOBJECT YG ADA DI DALAM CONTENTPANEL
     public void DestroyAllObjects(){
         foreach (Transform child in contentPanel){
             Destroy(child.gameObject);

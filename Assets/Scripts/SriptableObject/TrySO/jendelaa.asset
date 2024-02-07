@@ -10,17 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 7485254258876f0438c6658d667e35a8, type: 3}
-  m_Name: musikk
+  m_Name: jendelaa
   m_EditorClassIdentifier: 
-  ObjectID: 3
-  ObjectName: musik
-  ObjectImage: {fileID: 21300000, guid: 031e442e8110ace46abdcb80fc81aa3a, type: 3}
+  ObjectID: 4
+  ObjectName: jendela
+  ObjectImage: {fileID: 21300000, guid: 920c8535c8787c7478d5c7583403949d, type: 3}
   ObjectType: 0
-  IsInitialObject: 1
-  CombineWithObjectID: 2
-  GeneratesObejctID: 5
+  IsInitialObject: 0
+  CombineWithObjectID: 0
+  GeneratesObejctID: 0
   ActiveRoom: 0
-  RoomPov: 0
-  ObjectPosition: {x: -200, y: -200, z: 0}
-  ObjectWidth: 300
-  ObjectHeight: 300
+  RoomPov: 1
+  ObjectPosition: {x: -365, y: 170, z: 0}
+  ObjectWidth: 400
+  ObjectHeight: 400

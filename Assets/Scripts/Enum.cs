@@ -8,6 +8,7 @@ public enum ObjectTypes
 {
     Pickable,
     Machine,
+    POVable,
 }
 
 public enum RoomPov
