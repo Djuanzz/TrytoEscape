@@ -14,6 +14,11 @@ public class TryObjectItems : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
     Transform originalParent;
     Vector3 startPosition;
 
+    private void Start()
+    {
+        objectController = FindObjectOfType<TryObjectController>();
+    }
+
     public void InitialiazeItem(TryObjectSO newItem)
     {
         item = newItem;
@@ -44,10 +49,14 @@ public class TryObjectItems : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
         if (dragObject != null)
         {
             GameObject dropTarget = eventData.pointerEnter;
-
-            Debug.Log("Object dropped: " + dragObject);
-            Debug.Log("Object drop target: " + dropTarget);
-            CombineObjects(dragObject.gameObject, dropTarget);
+            TryObjectItems dropTargetItem = dropTarget.GetComponent<TryObjectItems>();
+            if (dropTargetItem != null)
+            {
+                Debug.Log("Object dropped: " + dragObject.gameObject.GetComponent<TryObjectItems>().item.ObjectName);
+                Debug.Log("Object drop target: " + dropTargetItem.item.ObjectName);
+                // CombineObjects(dragObject.gameObject, dropTarget);
+                objectController.CombineObjects(dragObject.gameObject, dropTarget);
+            }
         }
     }
 
@@ -61,18 +70,19 @@ public class TryObjectItems : MonoBehaviour, IBeginDragHandler, IDragHandler, IE
 
     public void CombineObjects(GameObject item1, GameObject item2)
     {
-        if (item1.GetComponent<TryObjectItems>().item.ObjectID == item2.GetComponent<TryObjectItems>().item.CombineWithObjectID && item2.GetComponent<TryObjectItems>().item.ObjectID == item1.GetComponent<TryObjectItems>().item.CombineWithObjectID)
-        {
-            Debug.Log("Combined");
-            Destroy(item1);
-            Destroy(item2);
-            // ----- MASIH ERROR DISINI NULL REFERENCE, LANJUT BESOK. KEMUNGKINAN FUCTION INI BAKAL DIPINDAH KE FILE LAIN YANG KHSUUS MENANGANI COMBINE OBJECT
-            // objectController.GetObjectByID(item2.GetComponent<TryObjectItems>().item.GeneratesObejctID);
-            Debug.Log("Object generated: " + item2.GetComponent<TryObjectItems>().item.GeneratesObejctID);
-        }
-        else
-        {
-            Debug.Log("Not Combined");
-        }
+        Debug.Log("INGPOKAANNNN");
+        // if (item1.GetComponent<TryObjectItems>().item.ObjectID == item2.GetComponent<TryObjectItems>().item.CombineWithObjectID && item2.GetComponent<TryObjectItems>().item.ObjectID == item1.GetComponent<TryObjectItems>().item.CombineWithObjectID)
+        // {
+        //     Debug.Log("Combined");
+        //     Destroy(item1);
+        //     Destroy(item2);
+        //     // ----- MASIH ERROR DISINI NULL REFERENCE, LANJUT BESOK. KEMUNGKINAN FUCTION INI BAKAL DIPINDAH KE FILE LAIN YANG KHSUUS MENANGANI COMBINE OBJECT
+        //     // objectController.GetObjectByID(item2.GetComponent<TryObjectItems>().item.GeneratesObejctID);
+        //     Debug.Log("Object generated: " + item2.GetComponent<TryObjectItems>().item.GeneratesObejctID);
+        // }
+        // else
+        // {
+        //     Debug.Log("Not Combined");
+        // }
     }
 }

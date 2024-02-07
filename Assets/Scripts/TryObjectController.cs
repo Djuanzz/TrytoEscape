@@ -43,4 +43,19 @@ public class TryObjectController : MonoBehaviour
         }
         return null; // Jika tidak ditemukan, kembalikan null
     }
+
+    public void CombineObjects(GameObject dragObject, GameObject dropTarget)
+    {
+        Debug.Log("CombineObjects SUCCESSSSSSS");
+
+        TryObjectItems item1 = dragObject.GetComponent<TryObjectItems>();
+        TryObjectItems item2 = dropTarget.GetComponent<TryObjectItems>();
+        if (item1.item.ObjectID == item2.item.CombineWithObjectID && item2.item.ObjectID == item1.item.CombineWithObjectID)
+        {
+            Destroy(dragObject);
+            Destroy(dropTarget);
+            GetObjectByID(item1.item.GeneratesObejctID);
+            Debug.Log("Combine object 1 and 2");
+        }
+    }
 }

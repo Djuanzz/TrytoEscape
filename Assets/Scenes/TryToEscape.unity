@@ -1797,9 +1797,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tryObjectsList:
-  - {fileID: 11400000, guid: d5ed06e3d3887984eb5f3a965e63e99b, type: 2}
-  - {fileID: 11400000, guid: 2a3b697038acbad4b9fa5b67a38e5332, type: 2}
   - {fileID: 11400000, guid: 9f4c6ec03fe105c4384b3252a0ea7d41, type: 2}
+  - {fileID: 11400000, guid: 2a3b697038acbad4b9fa5b67a38e5332, type: 2}
+  - {fileID: 11400000, guid: d5ed06e3d3887984eb5f3a965e63e99b, type: 2}
   objectUI: {fileID: 2139356575}
 --- !u!1 &1782732622
 GameObject:
