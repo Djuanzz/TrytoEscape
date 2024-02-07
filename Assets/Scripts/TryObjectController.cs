@@ -8,11 +8,22 @@ public class TryObjectController : MonoBehaviour
     private List<TryObjectSO> tryObjectsList = new List<TryObjectSO>();
     [SerializeField]
     private TryObjectPage objectUI;
+    private TryRoomController roomController;
 
     private void Start(){
+        roomController = GetComponent<TryRoomController>();
+        SpawnObject();
+    }
+
+    public void SpawnObject(){
         foreach (TryObjectSO tryObject in tryObjectsList){
-            objectUI.CreateObjectUI(tryObject);
+            if (tryObject.IsInitialObject && tryObject.ActiveRoom == roomController.activeRoom && tryObject.RoomPov == roomController.roomPov)
+                objectUI.CreateObjectUI(tryObject);
         }
+    }
+
+    public void DestroyAllObjects(){
+        objectUI.DestroyAllObjects();
     }
 
     public void GetObjectByID(int id)

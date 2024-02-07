@@ -14,9 +14,11 @@ public class TryObjectSO : ScriptableObject
     public Sprite ObjectImage;
 
 
-    [Header("Object Type")]
+    [Header("Object Specification")]
     [field: SerializeField]
     public ObjectTypes ObjectType;
+    [field: SerializeField]
+    public bool IsInitialObject;
 
 
     [Header("Object Combination")]

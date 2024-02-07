@@ -16,6 +16,7 @@ MonoBehaviour:
   ObjectName: musik
   ObjectImage: {fileID: 21300000, guid: 031e442e8110ace46abdcb80fc81aa3a, type: 3}
   ObjectType: 0
+  IsInitialObject: 1
   CombineWithObjectID: 2
   GeneratesObejctID: 5
   ActiveRoom: 0

@@ -16,6 +16,7 @@ MonoBehaviour:
   ObjectName: pigura
   ObjectImage: {fileID: 21300000, guid: e861147030b12cd47bd22a42554a2470, type: 3}
   ObjectType: 0
+  IsInitialObject: 1
   CombineWithObjectID: 3
   GeneratesObejctID: 5
   ActiveRoom: 0

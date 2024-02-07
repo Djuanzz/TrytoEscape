@@ -14,4 +14,10 @@ public class TryObjectPage : MonoBehaviour
         uiItem.transform.SetParent(contentPanel);
         uiItem.InitialiazeItem(item);
     }
+
+    public void DestroyAllObjects(){
+        foreach (Transform child in contentPanel){
+            Destroy(child.gameObject);
+        }
+    }
 }

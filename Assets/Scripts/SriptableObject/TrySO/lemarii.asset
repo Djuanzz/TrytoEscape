@@ -16,6 +16,7 @@ MonoBehaviour:
   ObjectName: lemari
   ObjectImage: {fileID: 21300000, guid: 06312e897a1dd0946adbd444ed97851b, type: 3}
   ObjectType: 0
+  IsInitialObject: 0
   CombineWithObjectID: 0
   GeneratesObejctID: 0
   ActiveRoom: 0
