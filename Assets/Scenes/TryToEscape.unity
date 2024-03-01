@@ -316,7 +316,7 @@ MonoBehaviour:
   m_Elasticity: 0.1
   m_Inertia: 0
   m_DecelerationRate: 0.135
-  m_ScrollSensitivity: 10
+  m_ScrollSensitivity: 100
   m_Viewport: {fileID: 433447817}
   m_HorizontalScrollbar: {fileID: 0}
   m_VerticalScrollbar: {fileID: 1782732624}
@@ -1814,7 +1814,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inventoryUI: {fileID: 1275947583}
-  inventorySize: 10
+  inventorySize: 3
 --- !u!4 &1655880773
 Transform:
   m_ObjectHideFlags: 0
@@ -1849,6 +1849,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 937abda0708ef284199716232cb09134, type: 2}
   - {fileID: 11400000, guid: 8bba2b62ad68b684381e36053897de4b, type: 2}
   - {fileID: 11400000, guid: ff471dc1f3639504f80f5fbdb5803e80, type: 2}
+  - {fileID: 11400000, guid: c27bf53afd163134e8a44dbb907a01b0, type: 2}
   objectUI: {fileID: 2139356575}
 --- !u!114 &1655880775
 MonoBehaviour:

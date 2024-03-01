@@ -13,6 +13,7 @@ public class NextButton : MonoBehaviour
     public void RightArrow()
     {
         curSpriteIndex = (curSpriteIndex + 1) % roomUI.roomSprites.Length;
+        Debug.Log(curSpriteIndex);
         roomUI.imageComponent.sprite = roomUI.roomSprites[curSpriteIndex];
         roomUI.roomController.roomPov = roomUI.roomController.enumFunction.ChangePov(curSpriteIndex);
         Debug.Log(roomUI.roomController.roomPov.ToString());
@@ -23,7 +24,8 @@ public class NextButton : MonoBehaviour
 
     public void LeftArrow()
     {
-        curSpriteIndex = (curSpriteIndex - 1) % roomUI.roomSprites.Length;
+        curSpriteIndex = (curSpriteIndex - 1 + roomUI.roomSprites.Length) % roomUI.roomSprites.Length;
+        Debug.Log(curSpriteIndex);
         roomUI.imageComponent.sprite = roomUI.roomSprites[curSpriteIndex];
         roomUI.roomController.roomPov = roomUI.roomController.enumFunction.ChangePov(curSpriteIndex);
         Debug.Log(roomUI.roomController.roomPov.ToString());
